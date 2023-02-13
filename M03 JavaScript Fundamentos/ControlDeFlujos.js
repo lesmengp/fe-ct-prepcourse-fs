@@ -234,3 +234,73 @@ var num = 2
 resultado = doWhile(num)
 console.log(resultado) 
 
+i = 0;
+n = 0;
+while (i < 5) {
+   i++;
+   if (i == 3)
+      continue;
+   n += i;
+}
+
+
+
+
+checkiandj:
+while (i < 4) {
+  document.write(i + "<br>");
+  i += 1;
+
+  checkj:
+  while (j > 4) {
+    document.write(j + "<br>");
+    j -= 1;
+    if ((j % 2) == 0)
+      continue checkj;
+    document.write(j + " is odd.<br>");
+  }
+  document.write("i = " + i + "<br>");
+  document.write("j = " + j + "<br>");
+}
+
+
+
+function comprobarBreak(x) {
+    var i = 0;
+    while (i < 6) {
+       if (i == 3)
+          break;
+       i++;
+    }
+    return i * x;
+ }
+
+
+ //AND
+function mayorYMenorYPar(num) {
+	if( num > 5 && num < 10  && num  % 2 === 0 ) console.log(true);
+	else console.log(false);
+};
+mayorYMenorYPar(7);
+mayorYMenorYPar(8); 
+
+
+// OR
+function operadorOr(str) {
+    if (str === 'Henry' || str.length < 2) console.log(true);
+    else console.log(false);
+ }
+ operadorOr('Henry');
+ operadorOr('Javascript');
+ operadorOr('H');
+
+ // NOT
+function negacion(permiso) {
+    if (permiso) console.log('Tiene permiso');
+ }
+ negacion(true);
+ negacion(false);
+
+
+
+ 
