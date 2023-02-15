@@ -1,0 +1,283 @@
+var deportes = {
+   conBalon: ['Futbol', 'Basketball', 'Golf'],
+   sinBalon: ['Boxeo', 'Surf', 'Trekking'],
+};
+var persona = { nombre: 'Lucas', edad: 26, estudios: { esProgramador: true } };
+
+// ACCEDER
+var persona = { nombre: 'Lucas', edad: 26, estudios: { esProgramador: true } };
+console.log(persona.edad);
+
+// ASIGNAR
+var persona = { nombre: 'Lucas', edad: 26, estudios: { esProgramador: true } };
+persona.nombre = 'Martín';
+console.log(persona.nombre);
+
+//CREAR
+var autos = {};
+autos.marcas = ['Ford', 'Audi', 'Ferrari'];
+console.log(autos);
+
+
+//BORRAR
+delete autos.marcas;
+console.log(autos);
+
+/* 
+Para acceder a la propiedad de un objeto simplemente tenemos que escribir el nombre del objeto seguido 
+de un punto y el nombre de la propiedad.
+Para cambiar el valor de una propiedad simplemente tenemos que acceder a ella e igualarla al nuevo valor.
+Para eliminar propiedades utilizaremos una palabra reservada llamada delete.  
+
+ */
+
+// DOT NOTATION
+var atuendos = { manos: ['Guantes', 'Anillos'], pies: ['Zapatos', 'Soquetes'] };
+
+// BRACKET NOTATION
+atuendos['piernas'] = ['Bermudas', 'Pantalones'];
+console.log(atuendos);
+
+function crearGato(nombre, edad) {
+    // Debes crear un nuevo objeto con las propiedades "nombre" y "edad".
+    // Ambas propiedades deben tener el valor correspondiente recibido por parámetro.
+    // Además, agregar una propiedad con el nombre "meow".
+    // La propiedad "meow" será una función que retorne el string: "Meow!".
+    // Retornar el objeto.
+    // Tu código:
+    var nuevoObjeto = {}
+    nuevoObjeto['nombre'] = nombre
+    nuevoObjeto['edad'] = edad
+    nuevoObjeto['meow'] = {meow:function() {console.log('Meow!')}}
+    return nuevoObjeto
+}
+ Nombre = 'Gerardo'
+ Edad = '26'
+ Resultado = crearGato(Nombre, Edad)
+ console.log(Resultado)
+ Resultado['meow'].meow()
+
+
+ const object = { a: 1, b: 2, c: 3 };
+ for (const property in object) {
+   console.log(`${property}: ${object[property]}`);
+ }
+
+ for (variable in objeto)
+  instrucción
+
+  var obj = {a: 1, b: 2, c: 3};
+
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+
+
+var triangle = {a: 1, b: 2, c: 3};
+
+function ColoredTriangle() {
+  this.color = 'red';
+}
+
+ColoredTriangle.prototype = triangle;
+
+var obj = new ColoredTriangle();
+
+for (const prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  }
+}
+
+
+
+
+
+var obj = {a: 1, b: 2, c: 3};
+for (var i = 0 in obj) {
+  console.log(obj[i]);
+}
+
+
+  // HAS OWN PROPERTY
+var libro = { autor: 'Borges', genero: 'Policial', año: 1990 };
+var tienePropiedad = libro.hasOwnProperty('nombre');
+
+console.log(tienePropiedad);
+
+
+// KEYS
+var libro = { autor: 'Borges', genero: 'Policial', año: 1990 };
+var todasLasPropiedades = Object.keys(libro);
+
+console.log(todasLasPropiedades);
+
+
+
+for (let prop in mundo) {
+console.log('Esta es la propiedad: ', prop);
+console.log('Este es el valor: ', mundo[prop]);
+}
+
+
+
+ //THIS
+var mascota = {
+animal: 'Perro',
+raza: 'Ovejero Alemán',
+amistoso: true,
+dueño: 'María López',
+info: () => {
+    console.log('Mi perro es un  ' + this.raza);
+}
+}
+
+
+
+function tieneEmail(objetoUsuario) {
+    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
+    // En ese caso retornar true. Caso contrario, false.
+    // Tu código:
+    if (objetoUsuario.hasOwnProperty('email') && objetoUsuario.email != null ) {
+        return true
+    } else
+        return false
+}
+Objeto = { usernombre: 'Jhon', email: 'correo' }
+Objeto1 = { usernombre: 'Jhon', email: null }
+Objeto2 = { usernombre: 'Antonio' }         
+var Resultado = tieneEmail(Objeto2)
+console.log(Resultado)
+
+
+function tienePropiedad(objeto, propiedad) {
+    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
+    // En ese caso retornar true. Caso contrario, false.
+    // Tu código:
+    return objeto.hasOwnProperty(propiedad)
+}
+Objeto = { usernombre: 'Jhon', email: 'correo' }
+Objeto1 = { usernombre: 'Jhon', email: null }
+Objeto2 = { usernombre: 'Antonio' }
+Propiedad = 'usernombre'         
+var Resultado = tienePropiedad(Objeto,Propiedad)
+console.log(Resultado)
+
+
+function verificarPassword(objetoUsuario, password) {
+    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
+    // En ese caso retornar true. Caso contrario, false.
+    // Tu código:   
+    if (objetoUsuario.password == password) {
+        return true
+    } else {
+        return false  // El password no coincide
+    }
+}
+var Objeto = { usernombre: 'Jhon', password: 'correo' }
+var Password = 'correo1'         
+var Resultado = verificarPassword(Objeto,Password)
+console.log(Resultado)
+
+
+
+function actualizarPassword(objetoUsuario, nuevaPassword) {
+    // Reemplaza la contrseña guardada en la propiedad "password" del "objetoUsuario".
+    // La nueva contraseña la recibes por parámetro.
+    // Retornar el objeto.
+    // Tu código:
+    if (objetoUsuario.hasOwnProperty('password')) {
+        delete objetoUsuario.password
+        objetoUsuario.password = nuevaPassword
+        return objetoUsuario
+    } else {
+        return false
+    }
+}
+var Objeto = { usernombre: 'Jhon', password: 'correo' }
+var Password = 'correo1'         
+var Resultado = actualizarPassword(Objeto,Password)
+console.log(Resultado)
+
+
+function agregarAmigo(objetoUsuario, nuevoAmigo) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "amigos" igual a un arreglo.
+    // Debes agregar el "nuevoAmigo" al final de este arreglo.
+    // Retornar el objeto.
+    // Tu código:
+    objetoUsuario.amigos.push(nuevoAmigo)
+    return objetoUsuario
+}
+var Objeto = { amigos: ['Jhon','Pedro'], password: 'correo' }
+var NuevoAmigo = 'Lesmen'         
+var Resultado = agregarAmigo(Objeto,NuevoAmigo)
+console.log(Resultado)
+
+
+
+function pasarUsuarioAPremium(objetoMuchosUsuarios) {
+    // El parámetro "objetoMuchosUsuarios" es un arreglo de objetos (usuarios).
+    // Cada usuario tiene una propiedad llamada "esPremium".
+    // Define esta propiedad de todos los usuarios como true.
+    // Retornar el arreglo.
+    // Tu código:
+    for (let i = 0; i < objetoMuchosUsuarios.length; i++) {
+       objetoMuchosUsuarios[i].esPremium = true  
+    }
+   return objetoMuchosUsuarios
+}
+ 
+var Objeto = [{"esPremium": false}, {"esPremium": true}, {"esPremium": false}]        
+var Resultado = pasarUsuarioAPremium(Objeto)
+console.log(Resultado)   
+
+// var atuendos = { manos: ['Guantes', 'Anillos'], pies: ['Zapatos', 'Soquetes'] };
+
+/* var Objeto = [{"esPremium": false}, {"esPremium": true}, {"esPremium": false}] 
+for (let i = 0; i < Objeto.length; i++) {
+    Objeto[i].esPremium = true  
+}
+console.log(Objeto) */
+
+
+function sumarLikesDeUsuario(objetoUsuario) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "posts" que es un arreglo.
+    // Este arreglo contiene objetos (post).
+    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
+    // Debes sumar los likes de todos los post y retornar el resultado.
+    // Tu código:
+    Objeto2 = objetoUsuario.posts
+    var suma = 0
+    for (const propiedad in Objeto2) {
+        suma = suma + Objeto2[propiedad].likes
+    }
+    return suma
+}
+var Objeto = { posts: [{"likes": 3}, {"likes": 5}, {"likes": 2}] , password: 'correo' }      
+var Resultado = sumarLikesDeUsuario(Objeto)
+console.log(Resultado) 
+
+
+/* var persona = {
+    nombre: ['Bob', 'Smith'],
+    edad: 32,
+    genero: 'masculino',
+    intereses: ['música', 'esquí'],
+    bio: function () {
+      alert(this.nombre[0] + '' + this.nombre[1] + ' tiene ' + this.edad + ' años. Le gusta ' + this.intereses[0] + ' y ' + this.intereses[1] + '.');
+    },
+    saludo: function() {
+      alert('Hola, Soy '+ this.nombre[0] + '. ');
+    }
+  
+  };
+ 
+console.log(persona.nombre)
+console.log(persona.nombre[0])
+console.log(persona.edad)
+console.log(persona.intereses[1])
+console.log(persona.bio())
+console(persona.bio())
+console.log(persona.saludo()) */
+
+

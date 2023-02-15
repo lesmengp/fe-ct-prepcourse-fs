@@ -338,3 +338,101 @@ console.log('TypeOf: ', typeof(Resultado))
 console.log('Array.isArray: ', Array.isArray(Resultado))
 
 
+// PUSH y UNSHIFT
+var colores = ['Amarillo', 'Azul'];
+colores.push('Rojo');
+colores.unshift('Verde');
+
+console.log(colores);
+// POP y SHIFT
+colores.shift();
+colores.pop();
+
+console.log(colores);
+// INCLUDES
+var pintores = ['Picasso', 'Velázquez', 'Van Gogh', 'Dalí'];
+var existeDali = pintores.includes('Dalí');
+
+console.log(existeDali);
+// EVERY
+var numeros = [ 1, 6, 8, 9, 43 ];
+var cumplenCondicion = numeros.every( ( num ) => { num > 5 } );
+
+console.log(cumplenCondicion);
+// SPLIT
+var palabra = 'Henri';
+var palabraSeparada = palabra.split('');
+
+console.log(palabraSeparada);
+// JOIN
+var palabraArreglada = palabraSeparada.join('');
+
+console.log(palabraArreglada);
+// FOREACH
+var numeros = [ 1, 2, 3, 4 ];
+numeros.forEach( (num) => { console.log(num) } )
+// MAP
+var numeros = [ 1, 2, 3, 4 ];
+var masUno = numeros.map( (num) => { return num + 1 } );
+
+console.log(masUno);
+
+
+
+function agregarAmigo(objetoUsuario, nuevoAmigo) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "amigos" igual a un arreglo.
+    // Debes agregar el "nuevoAmigo" al final de este arreglo.
+    // Retornar el objeto.
+    // Tu código:
+    objetoUsuario.amigos.push(nuevoAmigo)
+    return objetoUsuario
+}
+var Objeto = { amigos: ['Jhon','Pedro'], password: 'correo' }
+var NuevoAmigo = 'Lesmen'         
+var Resultado = agregarAmigo(Objeto,NuevoAmigo)
+console.log(Resultado)
+
+
+function pasarUsuarioAPremium(objetoMuchosUsuarios) {
+    // El parámetro "objetoMuchosUsuarios" es un arreglo de objetos (usuarios).
+    // Cada usuario tiene una propiedad llamada "esPremium".
+    // Define esta propiedad de todos los usuarios como true.
+    // Retornar el arreglo.
+    // Tu código:
+    for (let i = 0; i < objetoMuchosUsuarios.length; i++) {
+       objetoMuchosUsuarios[i].esPremium = true  
+    }
+   return objetoMuchosUsuarios
+}
+ 
+var Objeto = [{"esPremium": false}, {"esPremium": true}, {"esPremium": false}]        
+var Resultado = pasarUsuarioAPremium(Objeto)
+console.log(Resultado)   
+
+// var atuendos = { manos: ['Guantes', 'Anillos'], pies: ['Zapatos', 'Soquetes'] };
+
+/* var Objeto = [{"esPremium": false}, {"esPremium": true}, {"esPremium": false}] 
+for (let i = 0; i < Objeto.length; i++) {
+    Objeto[i].esPremium = true  
+}
+console.log(Objeto) */
+
+
+function sumarLikesDeUsuario(objetoUsuario) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "posts" que es un arreglo.
+    // Este arreglo contiene objetos (post).
+    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
+    // Debes sumar los likes de todos los post y retornar el resultado.
+    // Tu código:
+    Objeto2 = objetoUsuario.posts
+    var suma = 0
+    for (const propiedad in Objeto2) {
+        suma = suma + Objeto2[propiedad].likes
+    }
+    return suma
+}
+var Objeto = { posts: [{"likes": 3}, {"likes": 5}, {"likes": 2}] , password: 'correo' }      
+var Resultado = sumarLikesDeUsuario(Objeto)
+console.log(Resultado) 
+
+
