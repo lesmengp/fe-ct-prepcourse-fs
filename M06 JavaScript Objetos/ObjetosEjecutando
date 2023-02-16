@@ -208,3 +208,73 @@ console.log(persona.bio())
 console(persona.bio())
 console.log(persona.saludo()) */
 
+
+
+function agregarMetodoCalculoDescuento(objetoProducto) {
+   // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
+   // Esta propiedad debe ser una función que multiplique el precio del producto por el porcentajeDeDescuento.
+   // El "objetoProducto" posee una propiedad "precio" y una propiedad "porcentajeDeDescuento".
+   // Luego debes restar del precio total del producto ese valor de descuento.
+   // Retornar el precio final.
+   // Ejemplo:
+   // Precio ---> 10
+   // PorcentajeDeDescuento ---> 0.2
+   // Precio final ---> 8
+   // Tu código:
+   objetoProducto.calcularPrecioDescuento = function () {
+       var precioConDescuento = (this.precio -  this.precio * this.porcentajeDeDescuento);
+       return precioConDescuento;
+    }
+    return objetoProducto.calcularPrecioDescuento();
+}
+var Objeto = { precio: 10, porcentajeDeDescuento: 0.2 }      
+var Resultado = agregarMetodoCalculoDescuento(Objeto)
+console.log(Resultado) 
+
+function agregarMetodoCalculoDescuento(objetoProducto) {
+   // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
+   // Esta propiedad debe ser una función que multiplique el precio del producto por el porcentajeDeDescuento.
+   // El "objetoProducto" posee una propiedad "precio" y una propiedad "porcentajeDeDescuento".
+   // Luego debes restar del precio total del producto ese valor de descuento.
+   // Retornar el precio final.
+   // Ejemplo:
+   // Precio ---> 10
+   // PorcentajeDeDescuento ---> 0.2
+   // Precio final ---> 8
+   // Tu código:
+   objetoProducto.calcularPrecioDescuento = function() {
+      return (this.precio -  (this.precio * this.porcentajeDeDescuento));
+   }
+   return (objetoProducto);
+}
+var Objeto = { precio: 10, porcentajeDeDescuento: 0.2 }      
+var Resultado = agregarMetodoCalculoDescuento(Objeto)
+console.log(Resultado) 
+
+
+
+function agregarStringInvertida() {
+   // Agrega un método al prototipo de "String" que devuelva la misma cadena de caracteres, pero invertida.
+   // El método debe llamarse "reverse".
+   // [PISTA]: necesitarás utilizar el objeto "this".
+   String.prototype.reverse = function() {
+      return this.split('').reverse().join('');
+   }
+}
+
+function agregarStringInvertida() {
+   // Agrega un método al prototipo de "String" que devuelva la misma cadena de caracteres, pero invertida.
+   // El método debe llamarse "reverse".
+   // [PISTA]: necesitarás utilizar el objeto "this".
+   String.prototype.reverse = function() {
+      var palabraSeparada = this.split('');
+      var palabraInvertida = [];
+      for (let i = palabraSeparada.length -1; i >= 0 ; i = i - 1) {
+         palabraInvertida.push(palabraSeparada[i]);
+       }
+   return (palabraInvertida.join(''));
+   }
+}
+
+
+
