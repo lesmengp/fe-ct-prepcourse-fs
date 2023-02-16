@@ -92,4 +92,40 @@ console.log(palabraInvertida.join(''));
 
 // ------
  */
+/* 
+class Persona {
+  // Crea el constructor de la clase "Persona".
+  // Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio".
+  // Debe tener un método llamado "detalle" que nos devuelva un objeto con las propiedades de la persona y
+  // sus valores.
+  constructor(nombre, apellido, edad, domicilio) {
+     this.nombre = nombre;
+     this.apellido = apellido;
+     this.edad = edad;
+     this.domicilio = domicilio;
+  }
+  detalle() {
+     return {
+        nombre: this.nombre,
+        apellido: this.apellido,
+        edad: this.edad,
+        domicilio: this.domicilio
+     }
+  }
+} 
+ */
 
+function mayuscula(nombre) {
+  // Esta función recibe un nombre (string).
+  // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
+  // [Ejemplo]: "mario" ----> "Mario".
+  // Tu código:
+  var palabraSeparada = nombre.split('');
+  var primeraLetra = palabraSeparada.shift().toUpperCase()
+  palabraSeparada = palabraSeparada.join('')
+  return (primeraLetra + palabraSeparada)
+  
+}
+
+var Resultado = mayuscula('lesmen')
+console.log(Resultado)
