@@ -114,7 +114,7 @@ class Persona {
   }
 } 
  */
-
+/* 
 function mayuscula(nombre) {
   // Esta función recibe un nombre (string).
   // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
@@ -128,4 +128,28 @@ function mayuscula(nombre) {
 }
 
 var Resultado = mayuscula('lesmen')
-console.log(Resultado)
+console.log(Resultado) */
+
+
+// BUCLES para los ARREGLOS
+// FOR
+var arr = [10, 20, 30, 40, 50];
+for (let i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+// FOREACH
+var numeros = [ 1, 2, 3, 4 ];
+numeros.forEach( (num) => { console.log(num) } )  // No permite modificar el arreglo original
+console.log(numeros)
+// MAP
+var numeros = [ 1, 2, 3, 4 ];
+var masUno = numeros.map( (num) => { return num + 1 } ); // El MAP permite modificar el arreglo original
+console.log(masUno); 
+
+
+
+// PUSH y UNSHIFT
+var colores = ['Amarillo', 'Azul'];
+colores.push('Rojo');
+colores.unshift('Verde');
+console.log(colores);
